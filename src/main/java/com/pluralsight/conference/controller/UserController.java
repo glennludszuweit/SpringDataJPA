@@ -13,7 +13,7 @@ public class UserController {
 
     @PostMapping
     public User createUser(User user) {
-        userService.createUser(user);
+        userService.save(user);
         return user;
     }
 

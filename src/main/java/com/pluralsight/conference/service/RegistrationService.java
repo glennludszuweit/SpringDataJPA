@@ -6,7 +6,7 @@ import com.pluralsight.conference.model.RegistrationReport;
 import java.util.List;
 
 public interface RegistrationService {
-    Registration createRegistration(Registration registration);
+    Registration save(Registration registration);
 
     List<Registration> findAll();
 

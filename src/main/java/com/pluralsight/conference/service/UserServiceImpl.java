@@ -11,9 +11,10 @@ import javax.transaction.Transactional;
 public class UserServiceImpl implements UserService {
     @Autowired
     public UserRepository userRepository;
-    @Override
+
     @Transactional
-    public User createUser(User user) {
-        return userRepository.createUser(user);
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
     }
 }

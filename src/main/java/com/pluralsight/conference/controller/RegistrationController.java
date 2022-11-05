@@ -26,7 +26,7 @@ public class RegistrationController {
             System.out.println("There were errors");
             return "registration";
         } else {
-            registrationService.createRegistration(registration);
+            registrationService.save(registration);
         }
 
         System.out.println("Registration: " + registration.getName());
@@ -49,5 +49,10 @@ public class RegistrationController {
     public @ResponseBody List<RegistrationReport> getRegistrationReports() {
         List<RegistrationReport> registrationReports = registrationService.findAllReports();
         return registrationReports;
+    }
+
+    @PostMapping("registration/update")
+    public @ResponseBody Registration updateRegistration(@Valid @ModelAttribute("registration") Registration registration, BindingResult binding) {
+        return registrationService.save(registration);
     }
 }
